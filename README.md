@@ -33,3 +33,7 @@ npm run build
 ```sh
 npm run lint
 ```
+
+### View
+
+View the [result](https://starlit-gumption-d32554.netlify.app/)
