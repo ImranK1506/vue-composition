@@ -3,10 +3,14 @@
   import { ref, onMounted } from 'vue';
   import EventService from '@/services/EventService';
 
+  const props = defineProps({
+    page: { required: true }
+  })
+
   const events = ref(null)
 
   onMounted(() => {
-    EventService.getEvents()
+    EventService.getEvents(2, props.page)
       .then((res) => {
         events.value = res.data
       })
