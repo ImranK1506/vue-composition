@@ -1,16 +1,18 @@
-<script setup>
-  defineProps({
-    event: {
-      type: Object,
-      required: true,
-    },
-  })
+<script>
+  export default {
+    props: {
+      event: {
+        type: Object,
+        required: true,
+      }
+    }
+  }
 </script>
 
 <template>
     <RouterLink
             class="event-link"
-            :to="{ name: 'event-details', params: { id: event.id } }">
+            :to="{ name: 'EventDetails', params: { id: event.id } }">
       <div class="event-card">
           <h2>{{ event.title }}</h2>
           <span>@{{ event.time }} on {{ event.date }}</span>
