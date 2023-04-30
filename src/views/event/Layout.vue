@@ -13,7 +13,11 @@
                     this.event = res.data
                 })
                 .catch(err => {
-                    console.log(err)
+                    if (err.response && err.response.status === 404) {
+                        this.$router.push({ name: '404Resource', params: { resource: 'event'} })
+                    } else {
+                        this.$router.push({ name: 'NetworkError' })
+                    }
                 })
         }
     }
